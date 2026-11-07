@@ -1,0 +1,34 @@
+<h1>LAN / DHCP</h1>
+
+<form class="card" data-config="dhcp" data-button="Zastosuj (po restarcie usługi dhcp)">
+  <h2>Ustawienia DHCP</h2>
+  <div data-field="pool_start" data-label="Początek puli"></div>
+  <div data-field="pool_end" data-label="Koniec puli"></div>
+  <div data-field="lease_time" data-label="Czas dzierżawy [s]"></div>
+  <div data-field="dns" data-label="DNS dla klientów" data-help="auto = adres AP (gdy działa usługa DNS), inaczej DNS nadrzędny"></div>
+</form>
+
+<div class="card">
+  <h2>Dzierżawy</h2>
+  <p class="muted" data-id="pool"></p>
+  <div data-id="leases"></div>
+</div>
+
+<div class="card">
+  <h2>Rezerwacje <span class="muted" data-id="res-count"></span></h2>
+  <div data-id="reservations"></div>
+  <p class="muted">Rezerwacje działają od razu, trwałe po Zapisz.</p>
+
+  <form data-id="res-form">
+    <h3>Dodaj / zmień rezerwację</h3>
+    <label for="res-mac">MAC</label>
+    <input id="res-mac" data-id="mac" type="text" placeholder="aa:bb:cc:dd:ee:ff" required>
+    <label for="res-ip">Adres IP</label>
+    <input id="res-ip" data-id="ip" type="text" placeholder="192.168.4.10 (puste = bieżący adres klienta)">
+    <label for="res-name">Nazwa</label>
+    <input id="res-name" data-id="name" type="text" placeholder="np. drukarka (opcjonalnie)">
+    <button type="submit">Zapisz rezerwację</button>
+    <button type="reset" class="secondary">Wyczyść</button>
+    <p class="msg" data-id="res-msg"></p>
+  </form>
+</div>

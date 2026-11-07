@@ -1,0 +1,28 @@
+<h1>Konfiguracja</h1>
+
+<div class="card">
+  <h2>Niezapisane zmiany</h2>
+  <div data-id="diff"></div>
+  <button type="button" data-id="save">Zapisz</button>
+  <button type="button" class="secondary" data-id="revert">Cofnij</button>
+</div>
+
+<div class="card">
+  <h2>Kopia zapasowa</h2>
+  <p>Pobiera zapisane pliki konfiguracji (bez hasła panelu) jako jeden plik JSON.
+    Niezapisane zmiany nie wchodzą do kopii - najpierw Zapisz.</p>
+  <p class="warn">Plik kopii zawiera hasła Wi-Fi i tokeny DDNS - przechowuj go w bezpiecznym miejscu.</p>
+  <a href="/api/backup"><button type="button">Pobierz kopię</button></a>
+  <h3>Przywracanie</h3>
+  <input type="file" accept=".json,application/json" data-id="file">
+  <button type="button" class="danger" data-id="restore">Przywróć z pliku</button>
+  <p class="msg" data-id="restore-msg"></p>
+</div>
+
+<div class="card">
+  <h2>Reset fabryczny</h2>
+  <p>Usuwa wszystkie pliki konfiguracji (także hasło panelu) i restartuje urządzenie z wartościami domyślnymi.
+    STA nie będzie się łączyć, AP wróci do ustawień fabrycznych.</p>
+  <button type="button" class="danger" data-id="reset">Reset fabryczny</button>
+  <p class="msg" data-id="reset-msg"></p>
+</div>

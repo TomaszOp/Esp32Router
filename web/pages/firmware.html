@@ -1,0 +1,25 @@
+<h1>Firmware</h1>
+
+<div class="card">
+  <h2>Partycje</h2>
+  <table>
+    <thead><tr><th></th><th>Partycja</th><th>Wersja</th><th>Stan</th></tr></thead>
+    <tbody data-id="partitions"></tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Aktualizacja</h2>
+  <p>Plik .pio/build/esp32-s3-devkitc-1/firmware.bin z kompilacji. Zapis do drugiej partycji, sprawdzenie obrazu, restart.
+    Jeśli nowy firmware nie wystartuje poprawnie, urządzenie wróci do obecnej wersji.</p>
+  <input type="file" accept=".bin" data-id="file">
+  <button type="button" data-id="upload">Wgraj firmware</button>
+  <div class="bar"><div data-id="bar"></div></div>
+  <p class="msg" data-id="msg"></p>
+</div>
+
+<div class="card">
+  <h2>Restart</h2>
+  <button type="button" class="secondary" data-id="reboot">Restartuj urządzenie</button>
+  <p class="msg" data-id="reboot-msg"></p>
+</div>

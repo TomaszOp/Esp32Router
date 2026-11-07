@@ -1,0 +1,42 @@
+# Routing / NAT (NAPT) w lwIP
+CONFIG_LWIP_IP_FORWARD=y
+CONFIG_LWIP_IPV4_NAPT=y
+CONFIG_LWIP_L2_TO_L3_COPY=y
+
+# Konsola na natywnym USB (USB Serial/JTAG)
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+
+# Pozwala wlaczyc log.level = debug w global.json
+CONFIG_LOG_MAXIMUM_LEVEL_DEBUG=y
+
+# Plytka N8R16: 8 MB flash (quad)
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+
+# Wiecej gniazd (DNS, panel WWW, sesje Telnet)
+CONFIG_LWIP_MAX_SOCKETS=24
+
+# Lista zadan ze stosem w "sys mem"
+CONFIG_FREERTOS_USE_TRACE_FACILITY=y
+
+# PSRAM Octal (N8R16). Brak/zly typ PSRAM nie blokuje startu (IGNORE_NOTFOUND).
+# Octal PSRAM zajmuje GPIO33-37.
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_IGNORE_NOTFOUND=y
+CONFIG_SPIRAM_USE_MALLOC=y
+CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL=4096
+CONFIG_SPIRAM_TRY_ALLOCATE_WIFI_LWIP=y
+
+# OTA: nowy firmware musi potwierdzic poprawny start, inaczej powrot do poprzedniego
+CONFIG_BOOTLOADER_APP_ROLLBACK_ENABLE=y
+
+# Statystyki lwIP (zajetosc tablicy NAT w panelu)
+CONFIG_LWIP_STATS=y
+
+# WebSocket w panelu WWW (logi na zywo)
+CONFIG_HTTPD_WS_SUPPORT=y
+
+# TLS (DDNS przez HTTPS) - bufory mbedTLS w PSRAM
+CONFIG_MBEDTLS_EXTERNAL_MEM_ALLOC=y

@@ -1,0 +1,22 @@
+<h1>Wi-Fi (AP)</h1>
+
+<div class="card">
+  <h2>Sieć AP</h2>
+  <form data-id="ap-form">
+    <label for="ap-ssid">SSID</label>
+    <input id="ap-ssid" data-id="ssid" type="text" maxlength="32">
+    <label for="ap-pass">Hasło</label>
+    <input id="ap-pass" data-id="pass" type="password" maxlength="63" placeholder="(bez zmian)">
+    <div class="help">Puste pole = dotychczasowe hasło, 8-63 znaki. Sieć otwartą ustawia się w konsoli (wifi ap "SSID").
+      Zmiana rozłącza klientów AP (także to połączenie).</div>
+    <button type="submit">Zastosuj</button>
+    <p class="msg" data-id="msg"></p>
+  </form>
+</div>
+
+<form class="card" data-config="wifi">
+  <h2>Ustawienia AP</h2>
+  <div data-field="ap.max_clients" data-label="Maksymalna liczba klientów"></div>
+  <div data-field="ap.ip" data-label="Adres IP AP"></div>
+  <div data-field="ap.mask" data-label="Maska podsieci"></div>
+</form>

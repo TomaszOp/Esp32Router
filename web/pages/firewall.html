@@ -1,0 +1,69 @@
+<h1>Firewall</h1>
+
+<div class="card">
+  <h2><span class="dot" data-id="dot"></span>Zapora dla klientów AP</h2>
+  <p data-id="state"></p>
+  <button type="button" data-id="svc">Uruchom</button>
+  <label class="check"><input type="checkbox" data-id="log"> Zapisuj zablokowane w logu (max 1 wpis/s na regułę)</label>
+  <p class="muted" data-id="extra"></p>
+  <p class="msg" data-id="msg"></p>
+</div>
+
+<div class="card">
+  <h2>Reguły <span class="muted" data-id="count"></span></h2>
+  <div data-id="rules"></div>
+  <p class="muted">Reguły sprawdzane są od góry, decyduje pierwsza pasująca; gdy żadna nie pasuje, ruch jest przepuszczany.
+    Dotyczą tylko ruchu wysyłanego przez klientów AP. Zmiany działają od razu, trwałe po Zapisz.</p>
+</div>
+
+<div class="card">
+  <form data-id="form">
+    <h2 data-id="title">Nowa reguła</h2>
+    <p>Szablony:
+      <button type="button" class="small secondary" data-tpl="smtp">SMTP 25</button>
+      <button type="button" class="small secondary" data-tpl="smb">SMB 445</button>
+      <button type="button" class="small secondary" data-tpl="dns">Wymuś DNS routera</button>
+      <button type="button" class="small secondary" data-tpl="telnet">Telnet dla klienta</button>
+    </p>
+    <label for="fw-name">Nazwa</label>
+    <input id="fw-name" data-id="name" type="text" maxlength="24" placeholder="np. smtp (a-z 0-9 - _)" required>
+    <label for="fw-client">Klient</label>
+    <input id="fw-client" data-id="client" type="text" list="fw-clients" placeholder="all, IP, IP/maska, MAC albo nazwa rezerwacji">
+    <datalist id="fw-clients" data-id="clients"></datalist>
+    <label for="fw-proto">Protokół</label>
+    <select id="fw-proto" data-id="proto">
+      <option value="both">TCP + UDP</option>
+      <option value="tcp">TCP</option>
+      <option value="udp">UDP</option>
+      <option value="icmp">ICMP (ping)</option>
+      <option value="all">wszystkie</option>
+    </select>
+    <label for="fw-ports">Porty docelowe</label>
+    <input id="fw-ports" data-id="ports" type="text" placeholder="puste = wszystkie; np. 25 albo 6881-6889 albo 25,465,587">
+    <label for="fw-dest">Cel</label>
+    <select id="fw-dest" data-id="dest">
+      <option value="internet">internet (przez sieć nadrzędną)</option>
+      <option value="router">router (usługi ESP: panel, Telnet, DNS)</option>
+      <option value="any">dowolny</option>
+    </select>
+    <label for="fw-destip">Adres celu</label>
+    <input id="fw-destip" data-id="destip" type="text" placeholder="any, IP albo IP/maska">
+    <label for="fw-action">Akcja</label>
+    <select id="fw-action" data-id="action">
+      <option value="block">blokuj</option>
+      <option value="allow">zezwól (wyjątek przed regułą blokującą)</option>
+    </select>
+    <label class="check"><input type="checkbox" data-id="enabled" checked> Reguła włączona</label>
+    <p class="msg error" data-id="warn" hidden>Ta reguła odetnie wszystkim klientom dostęp do routera (panel, Telnet).
+      Konsola COM działa zawsze; wyłączenie: service stop firewall.</p>
+    <button type="submit">Zapisz regułę</button>
+    <button type="button" class="secondary" data-id="new">Nowa</button>
+    <p class="msg" data-id="fmsg"></p>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Ostatnio zablokowane</h2>
+  <div data-id="recent"></div>
+  <p class="muted">Tylko gdy włączony log zablokowanych; najwyżej jeden wpis na sekundę na regułę.</p>
+</div>

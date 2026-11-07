@@ -1,0 +1,35 @@
+<h1>Internet (STA)</h1>
+
+<div class="card">
+  <h2>Stan</h2>
+  <p data-id="state">-</p>
+</div>
+
+<div class="card">
+  <h2>Sieć nadrzędna</h2>
+  <form data-id="sta-form">
+    <label for="sta-ssid">SSID</label>
+    <input id="sta-ssid" data-id="ssid" type="text" maxlength="32">
+    <label for="sta-pass">Hasło</label>
+    <input id="sta-pass" data-id="pass" type="password" maxlength="63" placeholder="(bez zmian)">
+    <div class="help">Puste pole = dotychczasowe hasło. Puste SSID = nie łącz. Zmiana działa od razu, trwała po Zapisz.</div>
+    <button type="submit">Połącz</button>
+    <p class="msg" data-id="sta-msg"></p>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Sieci w zasięgu</h2>
+  <p class="muted">Podczas skanowania klienci AP mogą mieć krótką przerwę.</p>
+  <button type="button" data-id="scan">Skanuj</button>
+  <p class="msg" data-id="scan-msg"></p>
+  <table>
+    <thead><tr><th>SSID</th><th>Sygnał</th><th>Kanał</th><th>Zabezp.</th><th></th></tr></thead>
+    <tbody data-id="networks"></tbody>
+  </table>
+</div>
+
+<form class="card" data-config="global">
+  <h2>Nazwa w sieci</h2>
+  <div data-field="hostname" data-label="Nazwa urządzenia (hostname w sieci nadrzędnej)"></div>
+</form>

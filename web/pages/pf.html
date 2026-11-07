@@ -1,0 +1,36 @@
+<h1>Przekierowanie portów</h1>
+
+<div class="card">
+  <h2>Reguły <span class="muted" data-id="entries"></span></h2>
+  <div data-id="rules"></div>
+  <p class="muted">Działa dla połączeń na adres STA (z sieci nadrzędnej; z internetu - jeśli router nadrzędny przekieruje port
+    na ESP). Zmiany działają od razu, trwałe po Zapisz.</p>
+  <button type="button" class="secondary" data-id="apply">Załóż reguły ponownie</button>
+</div>
+
+<div class="card">
+  <form data-id="form">
+    <h2 data-id="title">Nowa reguła</h2>
+    <label for="pf-name">Nazwa</label>
+    <input id="pf-name" data-id="name" type="text" placeholder="np. kamera (opcjonalnie)">
+    <label for="pf-proto">Protokół</label>
+    <select id="pf-proto" data-id="proto">
+      <option value="tcp">TCP</option>
+      <option value="udp">UDP</option>
+      <option value="both">TCP + UDP</option>
+    </select>
+    <label for="pf-ext">Port zewnętrzny (na adresie STA)</label>
+    <input id="pf-ext" data-id="ext" type="number" min="1" max="65535" required>
+    <label for="pf-target">Cel</label>
+    <input id="pf-target" data-id="target" type="text" list="pf-targets" placeholder="192.168.4.10 albo nazwa rezerwacji" required>
+    <datalist id="pf-targets" data-id="targets"></datalist>
+    <label for="pf-int">Port wewnętrzny</label>
+    <input id="pf-int" data-id="int" type="number" min="1" max="65535" placeholder="(jak zewnętrzny)">
+    <label for="pf-src">Źródło (kto z zewnątrz może korzystać)</label>
+    <input id="pf-src" data-id="src" type="text" placeholder="puste = wszyscy; np. 203.0.113.7 albo 198.51.100.0/24 (max 4, po przecinku)">
+    <label class="check"><input type="checkbox" data-id="enabled" checked> Reguła włączona</label>
+    <button type="submit">Zapisz regułę</button>
+    <button type="button" class="secondary" data-id="new">Nowa</button>
+    <p class="msg" data-id="msg"></p>
+  </form>
+</div>

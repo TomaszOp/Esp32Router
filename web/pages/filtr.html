@@ -1,0 +1,54 @@
+<h1>Filtrowanie</h1>
+
+<div class="card">
+  <h2>Blokowanie domen</h2>
+  <label class="check"><input type="checkbox" data-id="enabled"> Blokowanie włączone</label>
+  <label for="block-resp">Odpowiedź dla zablokowanych</label>
+  <select id="block-resp" data-id="response">
+    <option value="zero">0.0.0.0 / :: (szybsza obsługa w aplikacjach)</option>
+    <option value="nxdomain">NXDOMAIN (domena nie istnieje)</option>
+  </select>
+  <p class="muted" data-id="summary"></p>
+  <p class="msg" data-id="msg"></p>
+</div>
+
+<div class="card">
+  <h2>Lista</h2>
+  <form data-id="search-form">
+    <input data-id="search" type="search" placeholder="szukaj (fragment nazwy)">
+  </form>
+  <div data-id="list"></div>
+  <p data-id="pager"></p>
+  <form data-id="add-form">
+    <label for="block-add">Dodaj domenę (blokuje też poddomeny)</label>
+    <input id="block-add" data-id="add" type="text" placeholder="np. doubleclick.net" required>
+    <button type="submit">Dodaj</button>
+    <p class="msg" data-id="add-msg"></p>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Sprawdź domenę</h2>
+  <form data-id="check-form">
+    <input data-id="check" type="text" placeholder="np. ads.example.com" required>
+    <button type="submit">Sprawdź</button>
+    <p class="msg" data-id="check-msg"></p>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Najczęściej blokowane</h2>
+  <div data-id="top"></div>
+</div>
+
+<div class="card">
+  <h2>Import i eksport</h2>
+  <p>Plik tekstowy: jedna domena w linii albo format hosts ("0.0.0.0 domena"), komentarze od #.
+    Lista działa od razu; plik na urządzeniu zapisuje się po Zapisz (max ok. 900 KB).</p>
+  <input type="file" accept=".txt,.hosts,text/plain" data-id="file">
+  <label class="check"><input type="checkbox" data-id="replace"> Zastąp obecną listę (zamiast dopisać)</label>
+  <button type="button" data-id="import">Importuj</button>
+  <div class="bar"><div data-id="bar"></div></div>
+  <p class="msg" data-id="import-msg"></p>
+  <a href="/api/dns/block/export"><button type="button" class="secondary">Pobierz obecną listę</button></a>
+</div>

@@ -1,0 +1,23 @@
+<h1>Usługi</h1>
+<div class="card">
+  <h2>Stan usług</h2>
+  <table>
+    <thead><tr><th>Usługa</th><th>Stan</th><th>Autostart</th><th></th></tr></thead>
+    <tbody data-id="services"></tbody>
+  </table>
+  <p class="muted">Zatrzymanie usługi "web" zamyka ten panel. Autostart dotyczy następnego uruchomienia (trwały po Zapisz).</p>
+</div>
+
+<form class="card" data-config="telnet">
+  <h2>Telnet</h2>
+  <div data-field="port" data-label="Port"></div>
+  <div data-field="max_sessions" data-label="Maksymalna liczba sesji"></div>
+  <div data-field="idle_timeout_s" data-label="Rozłączenie po bezczynności [s]" data-help="0 = bez limitu"></div>
+</form>
+
+<form class="card" data-config="web">
+  <h2>Panel WWW</h2>
+  <div data-field="port" data-label="Port"></div>
+  <div data-field="session_timeout_s" data-label="Wylogowanie po bezczynności [s]"></div>
+  <div data-field="max_sessions" data-label="Maksymalna liczba sesji"></div>
+</form>

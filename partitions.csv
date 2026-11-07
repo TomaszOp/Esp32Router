@@ -1,0 +1,9 @@
+# Name,   Type, SubType,  Offset,   Size
+# LittleFS zostaje na 0x310000 (konfiguracja przetrwa zmiane ukladu).
+# otadata na koncu - nie musi stac przed partycjami aplikacji.
+nvs,      data, nvs,      0x9000,   0x6000
+phy_init, data, phy,      0xf000,   0x1000
+ota_0,    app,  ota_0,    0x10000,  0x300000
+littlefs, data, littlefs, 0x310000, 0x100000
+ota_1,    app,  ota_1,    0x410000, 0x300000
+otadata,  data, ota,      0x710000, 0x2000

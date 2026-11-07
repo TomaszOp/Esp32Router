@@ -1,0 +1,27 @@
+<h1>Diagnostyka</h1>
+
+<div class="card">
+  <h2>Logi na żywo</h2>
+  <p class="muted" data-id="log-state">Łączenie...</p>
+  <button type="button" class="small secondary" data-id="log-pause">Wstrzymaj</button>
+  <button type="button" class="small secondary" data-id="log-clear">Wyczyść widok</button>
+  <pre class="term" data-id="log"></pre>
+</div>
+
+<div class="card">
+  <h2>Terminal</h2>
+  <p class="muted">Polecenia konsoli jak w COM/Telnet (np. help, status, dhcp leases). Strzałki góra/dół - historia.</p>
+  <pre class="term" data-id="term"></pre>
+  <form class="term-input" data-id="term-form">
+    <input data-id="term-input" type="text" autocomplete="off" spellcheck="false" placeholder="esp32router> ">
+    <button type="submit">Wykonaj</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Pamięć <button type="button" class="small secondary" data-id="mem-refresh">Odśwież</button></h2>
+  <div data-id="heap"></div>
+  <dl class="kv" data-id="flash"></dl>
+  <h3>Zadania (minimum wolnego stosu od startu)</h3>
+  <div data-id="tasks"></div>
+</div>

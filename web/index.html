@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Esp32Router</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Logowanie -->
+  <section id="login" class="login" hidden>
+    <form id="login-form" class="card">
+      <h1>Esp32Router</h1>
+      <label for="login-pass">Hasło</label>
+      <input id="login-pass" type="password" autocomplete="current-password" required autofocus>
+      <button type="submit">Zaloguj</button>
+      <p class="msg" id="login-msg"></p>
+    </form>
+  </section>
+
+  <!-- Panel -->
+  <div id="app" hidden>
+    <header class="top">
+      <button id="menu-toggle" class="icon" aria-label="Menu">&#9776;</button>
+      <div class="brand"><strong id="hdr-host">-</strong> <span id="hdr-version" class="muted"></span></div>
+      <div class="hdr-info">
+        <span id="hdr-net" class="pill">-</span>
+        <span id="hdr-clients" class="pill">-</span>
+        <span id="hdr-time" class="muted"></span>
+      </div>
+      <button id="lang" class="link" type="button">EN</button>
+      <button id="logout" class="link">Wyloguj</button>
+    </header>
+    <div id="unsaved" class="unsaved" hidden>
+      <span id="unsaved-text">Masz niezapisane zmiany</span>
+      <a href="#/konfiguracja">Pokaż różnice</a>
+      <button id="unsaved-revert" class="secondary">Cofnij</button>
+      <button id="unsaved-save">Zapisz</button>
+    </div>
+    <div id="default-pass" class="banner" hidden>
+      Używasz domyślnego hasła - <a href="#/haslo">zmień je</a>
+    </div>
+    <div class="layout">
+      <nav id="menu" class="menu"></nav>
+      <main id="content" class="content"></main>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <!-- Szkielet: nagłówek, menu, pasek zmian. Podstrony: pages/<nazwa>.html + pages/<nazwa>.js (ładowane przy wejściu). -->
+  <script src="/app.js"></script>
+  <script>App.start();</script>
+</body>
+</html>

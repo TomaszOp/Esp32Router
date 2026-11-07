@@ -1,0 +1,61 @@
+<h1>DNS</h1>
+
+<div class="grid">
+  <div class="card">
+    <h2>Statystyki</h2>
+    <dl class="kv" data-id="stats"></dl>
+    <button type="button" class="small secondary" data-id="refresh">Odśwież</button>
+  </div>
+  <div class="card">
+    <h2>Cache</h2>
+    <p data-id="cache">-</p>
+    <button type="button" class="small secondary" data-id="cache-clear">Wyczyść cache</button>
+  </div>
+</div>
+
+<div class="card">
+  <h2>DNS nadrzędny</h2>
+  <p data-id="upstream-mode"></p>
+  <div data-id="upstream"></div>
+  <form data-id="upstream-form">
+    <label class="check"><input type="radio" name="up-mode" value="auto" data-id="up-auto"> auto (DNS z sieci nadrzędnej)</label>
+    <label class="check"><input type="radio" name="up-mode" value="manual" data-id="up-manual"> stałe serwery</label>
+    <label for="up1">Serwer 1</label><input id="up1" data-id="up1" type="text" placeholder="np. 1.1.1.1">
+    <label for="up2">Serwer 2 (zapasowy)</label><input id="up2" data-id="up2" type="text" placeholder="np. 8.8.8.8">
+    <button type="submit">Zastosuj</button>
+    <p class="msg" data-id="upstream-msg"></p>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Nazwy lokalne</h2>
+  <div data-id="names"></div>
+  <form data-id="add-form">
+    <h3>Dodaj / zmień wpis statyczny</h3>
+    <label for="dns-name">Nazwa</label>
+    <input id="dns-name" data-id="name" type="text" placeholder="np. nas albo drukarka.firma.pl" required>
+    <label for="dns-ip">Adres IP</label>
+    <input id="dns-ip" data-id="ip" type="text" placeholder="192.168.4.20" required>
+    <button type="submit">Zapisz wpis</button>
+    <p class="msg" data-id="add-msg"></p>
+  </form>
+  <p class="muted">Wpisy statyczne mogą nadpisać nazwy zewnętrzne. Zmiany działają od razu, trwałe po Zapisz.</p>
+</div>
+
+<div class="card">
+  <h2>Sprawdź nazwę</h2>
+  <form data-id="lookup-form">
+    <input data-id="lookup" type="text" placeholder="np. pc.lan albo google.com" required>
+    <button type="submit">Sprawdź</button>
+    <p class="msg" data-id="lookup-msg"></p>
+  </form>
+</div>
+
+<form class="card" data-config="dns">
+  <h2>Ustawienia</h2>
+  <div data-field="domain" data-label="Domena lokalna"></div>
+  <div data-field="local_ttl" data-label="TTL odpowiedzi lokalnych [s]"></div>
+  <div data-field="dhcp_names" data-label="Odpowiadaj nazwami z DHCP (rezerwacje i dzierżawy)"></div>
+  <div data-field="cache_size" data-label="Rozmiar cache [wpisy]"></div>
+  <div data-field="cache_sweep_s" data-label="Czyszczenie wygasłych wpisów co [s]"></div>
+</form>

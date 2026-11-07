@@ -1,0 +1,17 @@
+<h1>Ogólne</h1>
+<form class="card" data-config="global">
+  <h2>Ustawienia ogólne</h2>
+  <div data-field="hostname" data-label="Nazwa urządzenia"></div>
+  <div data-field="language" data-label="Język panelu i konsoli" data-options="pl:Polski,en:English"
+       data-help="Działa od razu (panel po odświeżeniu); także przełącznik PL/EN w nagłówku."></div>
+  <div data-field="console_utf8" data-label="Konsola COM/Telnet w UTF-8"
+       data-help="Wyłączone: polskie znaki w konsoli jako litery bez ogonków (działa w każdym terminalu)."></div>
+  <div data-field="time.ntp_enabled" data-label="Synchronizacja czasu (NTP)"></div>
+  <div data-field="time.ntp_server" data-label="Serwer NTP"></div>
+  <div data-field="time.timezone" data-label="Strefa czasowa (POSIX TZ)" data-help="Polska: CET-1CEST,M3.5.0,M10.5.0/3"></div>
+  <div data-field="log.level" data-label="Poziom logów"
+       data-options="none:brak,error:błędy,warn:ostrzeżenia,info:informacje,debug:debug"></div>
+  <div data-field="mgmt_from_sta" data-label="Zarządzanie (Telnet, panel) także od strony sieci nadrzędnej"></div>
+  <div data-field="wan_ping" data-label="Odpowiadaj na ping od strony sieci nadrzędnej (WAN)"
+       data-help="Wyłączone: ping na adres STA ESP jest odrzucany (niezależnie od usługi firewall)."></div>
+</form>

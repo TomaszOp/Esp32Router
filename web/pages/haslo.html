@@ -1,0 +1,14 @@
+<h1>Hasło panelu</h1>
+<div class="card">
+  <form data-id="form">
+    <label for="pw-old">Obecne hasło</label>
+    <input id="pw-old" data-id="old" type="password" autocomplete="current-password" required>
+    <label for="pw-new">Nowe hasło (8-64 znaki)</label>
+    <input id="pw-new" data-id="new" type="password" autocomplete="new-password" minlength="8" required>
+    <label for="pw-new2">Powtórz nowe hasło</label>
+    <input id="pw-new2" data-id="new2" type="password" autocomplete="new-password" minlength="8" required>
+    <button type="submit">Zmień hasło</button>
+    <p class="msg" data-id="msg"></p>
+  </form>
+  <p class="muted">Zapomniane hasło: w konsoli COM "web passwd reset" przywraca hasło fabryczne.</p>
+</div>
